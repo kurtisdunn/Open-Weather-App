@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="httpRequests" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,63 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder=" Search Cities" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rTh-Tv-Nbe">
+                                <rect key="frame" x="16" y="28" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4LN-BD-1xu">
+                                <rect key="frame" x="16" y="74" width="568" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="btD-3E-wer"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="0.99545492627345844" green="0.99545492627345844" blue="0.99545492627345844" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jzj-Bo-vIt">
+                                <rect key="frame" x="16" y="110" width="568" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="jC5-mR-5Fu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7B-pb-GDj">
+                                <rect key="frame" x="16" y="164" width="568" height="30"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                <state key="normal" title="Get Data">
+                                    <color key="titleColor" red="0.51338103595308671" green="0.92401699594062769" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="1" green="1" blue="1" alpha="0.059999999999999998" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="getData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="83u-Ob-GaG"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.2650243491" green="0.28437681149999999" blue="0.28904172210000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="4LN-BD-1xu" firstAttribute="leading" secondItem="rTh-Tv-Nbe" secondAttribute="leading" id="0Dm-UY-S9x"/>
+                            <constraint firstItem="4LN-BD-1xu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ObD-rB-TKd"/>
+                            <constraint firstItem="w7B-pb-GDj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="On6-Ey-OmQ"/>
+                            <constraint firstItem="Jzj-Bo-vIt" firstAttribute="trailing" secondItem="4LN-BD-1xu" secondAttribute="trailing" id="Q5P-2e-RpP"/>
+                            <constraint firstItem="4LN-BD-1xu" firstAttribute="top" secondItem="rTh-Tv-Nbe" secondAttribute="bottom" constant="16" id="WcS-5Z-HE4"/>
+                            <constraint firstItem="Jzj-Bo-vIt" firstAttribute="leading" secondItem="w7B-pb-GDj" secondAttribute="leading" id="XGn-Gg-63K"/>
+                            <constraint firstItem="4LN-BD-1xu" firstAttribute="trailing" secondItem="rTh-Tv-Nbe" secondAttribute="trailing" id="YxZ-hd-uQ3"/>
+                            <constraint firstItem="w7B-pb-GDj" firstAttribute="top" secondItem="Jzj-Bo-vIt" secondAttribute="bottom" constant="27" id="dOj-o0-mwJ"/>
+                            <constraint firstItem="Jzj-Bo-vIt" firstAttribute="trailing" secondItem="w7B-pb-GDj" secondAttribute="trailing" id="fMn-gW-gEi"/>
+                            <constraint firstItem="4LN-BD-1xu" firstAttribute="leading" secondItem="Jzj-Bo-vIt" secondAttribute="leading" id="kIk-P8-CNy"/>
+                            <constraint firstItem="rTh-Tv-Nbe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="rhC-I6-CbK"/>
+                            <constraint firstItem="Jzj-Bo-vIt" firstAttribute="top" secondItem="4LN-BD-1xu" secondAttribute="bottom" constant="8" symbolic="YES" id="waW-MG-4Xc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="4LN-BD-1xu" id="FpN-14-VG9"/>
+                        <outlet property="nameTextField" destination="rTh-Tv-Nbe" id="Hik-4X-Ash"/>
+                        <outlet property="tempLabel" destination="Jzj-Bo-vIt" id="IAx-qc-PyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
