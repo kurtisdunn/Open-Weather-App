@@ -1,6 +1,6 @@
 # Open Weather App
 
-Basic iOS8 App written in Swift. 
+iOS8 App written in Swift. 
 
 Uses API from OpenWeatherMap.com
 
